@@ -10,19 +10,32 @@ import UIKit
 
 class ViewController: UITableViewController {
     
+    @IBOutlet weak var errorView: UIView!
     var moviesArray: NSArray?
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        errorView.hidden = true
+        fetchMovies()
+    }
+    
+    func fetchMovies() {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
         let YourApiKey = "6zr49gek9an5ymg5tdh3ac67"
         let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=" + YourApiKey
         let request = NSMutableURLRequest(URL: NSURL(string: RottenTomatoesURLString)!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler:{ (response, data, error) in
-            var errorValue: NSError? = nil
-            let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errorValue) as NSDictionary
-            self.moviesArray = dictionary["movies"] as? NSArray
-            self.tableView.reloadData()
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            var errorValue: NSError? = error
+            if errorValue != nil {
+                self.errorView.hidden = false
+            } else {
+                self.errorView.hidden = true
+                let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errorValue) as NSDictionary
+                self.moviesArray = dictionary["movies"] as? NSArray
+                self.tableView.reloadData()
+            }
         })
     }
     
@@ -38,7 +51,6 @@ class ViewController: UITableViewController {
         let movie = self.moviesArray![indexPath.row] as NSDictionary
         let cell = tableView.dequeueReusableCellWithIdentifier("com.codepath.mycell") as MovieTableViewCell
         cell.movieTitleLabel.text = movie["title"] as NSString
-        cell.movieDescriptionLabel.text = movie["synopsis"] as NSString
         let posters = movie["posters"] as NSDictionary
         let posterUrl = posters["original"] as NSString
         cell.posterThumb.setImageWithURL(NSURL(string: posterUrl))
