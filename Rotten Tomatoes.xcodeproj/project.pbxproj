@@ -10,6 +10,7 @@
 		072F270426367682EC518556 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94AE872F0FB64F5D39000015 /* libPods.a */; };
 		3F6831881A84BAA800A80D58 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6831871A84BAA800A80D58 /* Test.m */; };
 		3F81AA881A85F1EA0007D0FB /* warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F81AA871A85F1EA0007D0FB /* warning.png */; };
+		3F9D8B821A8856A200E5A40F /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D8B811A8856A200E5A40F /* MovieCollectionViewCell.swift */; };
 		3FB44CDF1A80851B0025D321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB44CDE1A80851B0025D321 /* AppDelegate.swift */; };
 		3FB44CE11A80851B0025D321 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB44CE01A80851B0025D321 /* ViewController.swift */; };
 		3FB44CE41A80851B0025D321 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FB44CE21A80851B0025D321 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		3F6831861A84BAA700A80D58 /* Rotten Tomatoes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rotten Tomatoes-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F6831871A84BAA800A80D58 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Test.m; path = "Rotten Tomatoes/Test.m"; sourceTree = "<group>"; };
 		3F81AA871A85F1EA0007D0FB /* warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warning.png; path = ../../../../Downloads/warning.png; sourceTree = "<group>"; };
+		3F9D8B811A8856A200E5A40F /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FB44CD91A80851B0025D321 /* Rotten Tomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rotten Tomatoes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB44CDD1A80851B0025D321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FB44CDE1A80851B0025D321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,12 +116,13 @@
 			children = (
 				3FB44CDE1A80851B0025D321 /* AppDelegate.swift */,
 				3FB44CE01A80851B0025D321 /* ViewController.swift */,
+				3F9D8B811A8856A200E5A40F /* MovieCollectionViewCell.swift */,
+				3FE1A4851A81F9580035341E /* MovieDetailsViewController.swift */,
+				3FE1A4831A81F1980035341E /* MovieTableViewCell.swift */,
 				3FB44CE21A80851B0025D321 /* Main.storyboard */,
 				3FB44CE51A80851B0025D321 /* Images.xcassets */,
 				3FB44CE71A80851B0025D321 /* LaunchScreen.xib */,
 				3FB44CDC1A80851B0025D321 /* Supporting Files */,
-				3FE1A4831A81F1980035341E /* MovieTableViewCell.swift */,
-				3FE1A4851A81F9580035341E /* MovieDetailsViewController.swift */,
 			);
 			path = "Rotten Tomatoes";
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				3FB44CE11A80851B0025D321 /* ViewController.swift in Sources */,
 				3FB44CDF1A80851B0025D321 /* AppDelegate.swift in Sources */,
 				3FE1A4841A81F1980035341E /* MovieTableViewCell.swift in Sources */,
+				3F9D8B821A8856A200E5A40F /* MovieCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
